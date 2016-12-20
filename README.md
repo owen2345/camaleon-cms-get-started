@@ -2,6 +2,7 @@
 This is the source code of Get Started "Book Store"
 ## Requeriments
 * Rails 5
+
 ## Installation
 * Download and unzip
 * Command line (within the project)
