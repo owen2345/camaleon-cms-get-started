@@ -1,0 +1,49 @@
+<%= render partial: 'partials/breadcrumb', locals: {breadcrumb: @post.the_breadcrumb} %>
+<div class="row">
+    <article class="col-md-9" id="book-view">
+        <div id="book-slider" class="carousel slide" data-ride="carousel" data-interval="false">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <% @post.get_fields('screenshots').each_with_index do |pthoto, index| %>
+                    <li data-target="#book-slider" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+                <% end %>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <% @post.get_fields('screenshots').each_with_index do |pthoto, index| %>
+                    <div class="item <%= 'active' if index == 0 %>">
+                        <img src="<%= pthoto %>" class="center-block">
+                    </div>
+                <% end %>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#book-slider" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left fa fa-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#book-slider" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right fa fa-chevron-right " aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <div class="book-information">
+            <h1><%= @post.the_title %> (<%= @post.get_field('isbn-code') %>)</h1>
+            <h4><%= number_to_currency(@post.get_field('price').to_f) %></h4>
+            <hr/>
+            <div><strong>Authors: </strong> <%= @post.get_fields('authors').join(', ') %></div>
+            <div><strong>Publisher: </strong> <%= @post.get_field('publisher') %></div>
+            <div><strong>Genre: </strong> <%= @post.the_field('genre') %></div>
+            <div><strong>Copies: </strong> <%= @post.the_field('copies') %></div>
+            <% if @post.the_field('author-url').present? %>
+                <div><strong>Author URI: </strong> <%= @post.the_field('author-url') %></div>
+            <% end %>
+            <div class="book_content"><%= raw @post.the_content %></div>
+        </div>
+    </article>
+    <div class="col-md-3">
+        <%= render partial: 'partials/sidebar', locals: {post: @post, skip_fields: true} %>
+    </div>
+</div>
