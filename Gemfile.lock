@@ -19,33 +19,6 @@ GIT
       activesupport (> 5.x)
       builder (~> 3.1)
 
-PATH
-  remote: /www/rails/camaleon-gem/camaleon-cms-gem
-  specs:
-    camaleon_cms (2.4.0)
-      aws-sdk (~> 2)
-      bcrypt
-      breadcrumbs_on_rails
-      cama_contact_form (~> 0.0.16)
-      cama_meta_tag
-      cancancan (~> 1.10)
-      coffee-rails
-      draper (>= 1.3)
-      font-awesome-rails
-      jquery-rails
-      meta-tags (~> 2.0)
-      mini_magick
-      sass-rails
-      tinymce-rails (~> 4.3)
-      will_paginate
-      will_paginate-bootstrap
-
-PATH
-  remote: /www/rails/gems/cama_image_lightbox
-  specs:
-    cama_image_lightbox (0.1.0)
-      rails (>= 4.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -103,6 +76,23 @@ GEM
       rails
     cama_meta_tag (1.3)
       rails (>= 4.1.0)
+    camaleon_cms (2.4.0)
+      aws-sdk (~> 2)
+      bcrypt
+      breadcrumbs_on_rails
+      cama_contact_form (~> 0.0.16)
+      cama_meta_tag
+      cancancan (~> 1.10)
+      coffee-rails
+      draper (>= 1.3)
+      font-awesome-rails
+      jquery-rails
+      meta-tags (~> 2.0)
+      mini_magick
+      sass-rails
+      tinymce-rails (~> 4.3)
+      will_paginate
+      will_paginate-bootstrap
     cancancan (1.15.0)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -231,8 +221,7 @@ PLATFORMS
 DEPENDENCIES
   activemodel-serializers-xml!
   byebug
-  cama_image_lightbox!
-  camaleon_cms!
+  camaleon_cms
   coffee-rails (~> 4.2)
   draper!
   jbuilder (~> 2.5)

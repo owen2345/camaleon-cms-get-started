@@ -41,6 +41,8 @@
                 <div><strong>Author URI: </strong> <%= @post.the_field('author-url') %></div>
             <% end %>
             <div class="book_content"><%= raw @post.the_content %></div>
+
+            <%= render partial: 'partials/comments', locals: {post: @post} if @post.can_commented? %>
         </div>
     </article>
     <div class="col-md-3">
